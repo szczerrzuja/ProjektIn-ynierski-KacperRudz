@@ -25,7 +25,7 @@ public class ClimbMoveset : WalkMoveSet
 
     public override void movementController(float groundMultiplayer, Vector3 inputMoveVector, Quaternion rot)
     {
-        HeroStat.jumpsCounter = HeroStat.maxJump;
+        HeroStat.jumpsCounter = HeroStat.getMaxJumps();
         rb.velocity = new Vector3(0.0f, HeroStat.getMvSpeed() * input.actions["Vertical"].ReadValue<float>(), 0.0f);
     }
     public override bool onJump(InputAction.CallbackContext context)

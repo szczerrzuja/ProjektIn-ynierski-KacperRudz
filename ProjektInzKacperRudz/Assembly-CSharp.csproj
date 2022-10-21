@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GameScript\RespwanPoint.cs" />
      <Compile Include="Assets\Scripts\Player\HeroCollision.cs" />
      <Compile Include="Assets\Scripts\Platofrms\PathPlatformS.cs" />
      <Compile Include="Assets\Scripts\Platofrms\PathPlatformC.cs" />
@@ -50,7 +51,7 @@
      <Compile Include="Assets\Scripts\GroundObject.cs" />
      <Compile Include="Assets\Scripts\GameScript\RespawnController.cs" />
      <Compile Include="Assets\MainMenu\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\GameScript\RespwanPoint.cs" />
+     <Compile Include="Assets\Scripts\Player\Stats.cs" />
     <Reference Include="UnityEngine">
         <HintPath>A:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -586,34 +587,34 @@
         <HintPath>A:/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>Y:/GithubRep/ProjInzKRudz/ProjInzKacperRudz/ProjektInzKacperRudz/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

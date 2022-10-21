@@ -64,7 +64,7 @@ public class HeroController : MonoBehaviour
 
         //gui
         playerStatus = GameObject.Find("Gui").GetComponent<PlayerStatus>();
-        playerStatus.Initiate(HeroStat.max_HP, HeroStat.max_SP);
+        playerStatus.Initiate(HeroStat.getMaxHP(), HeroStat.getMaxSP());
 
         GetComponent<HeroCollision>().setHeroStat(ref HeroStat);
 
@@ -145,7 +145,7 @@ public class HeroController : MonoBehaviour
         {
 
             groundMultiplayer = hit.normal.y;
-            HeroStat.jumpsCounter = HeroStat.maxJump - 1;
+            HeroStat.jumpsCounter = HeroStat.getMaxJumps() - 1;
             HeroStat.isGrounded = true;
         }
         else
