@@ -20,9 +20,7 @@ public class RespawnController : MonoBehaviour
         
     }
     public IEnumerator respwanOnDelay(){
-        Debug.Log("Waiting");
         yield return new WaitForSeconds(3.0f);
-        Debug.Log("I ma respawning");
         respwanPlayer();
     }
     void respwanPlayer()

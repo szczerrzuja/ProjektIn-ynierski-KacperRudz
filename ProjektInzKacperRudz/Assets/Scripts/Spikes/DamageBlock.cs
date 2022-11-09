@@ -7,11 +7,12 @@ public class DamageBlock : MonoBehaviour
     [SerializeField] float knockback, damage;
     private int attackCooldown;
     const int attackCooldownTime = 2;
+    SpikesAnimator animContrl;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animContrl = GetComponent<SpikesAnimator>();
     }
 
     // Update is called once per frame
@@ -34,6 +35,11 @@ public class DamageBlock : MonoBehaviour
                 HCC.applyDamage(damage);
               
                 HCC.applyKnockback(-collision.contacts[0].normal*knockback);
+                
+            }
+            if(animContrl){
+            Debug.Log("AA BOLI");
+            animContrl.iWasTouched();
             }
         }
        

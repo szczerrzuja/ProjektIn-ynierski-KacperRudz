@@ -45,13 +45,16 @@
      <Compile Include="Assets\Scripts\Player\HeroStatManager.cs" />
      <Compile Include="Assets\Scripts\Platofrms\PathPlatformCR.cs" />
      <Compile Include="Assets\Scripts\Player\ClimbMoveset.cs" />
+     <Compile Include="Assets\Scripts\GameScript\StatsUp.cs" />
      <Compile Include="Assets\Scripts\UISctipts\PlayerStatus.cs" />
      <Compile Include="Assets\Scripts\Player\HeroController.cs" />
      <Compile Include="Assets\Scripts\Spikes\DamageBlock.cs" />
+     <Compile Include="Assets\Scripts\Player\Stats.cs" />
      <Compile Include="Assets\Scripts\GroundObject.cs" />
      <Compile Include="Assets\Scripts\GameScript\RespawnController.cs" />
      <Compile Include="Assets\MainMenu\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Player\Stats.cs" />
+     <Compile Include="Assets\Scripts\GameScript\WindScript.cs" />
+     <Compile Include="Assets\Scripts\Spikes\SpikesAnimator.cs" />
     <Reference Include="UnityEngine">
         <HintPath>A:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -48,15 +48,15 @@ public class HeroController : MonoBehaviour
         input = GetComponent<PlayerInput>();
         HeroStat = new HeroStatManager();
         BodyTransform = this.transform.Find("Body").transform;
-
+        capsWidth = collide.radius;
         rb.velocity = Vector3.zero;
         moveSet = new List<WalkMoveSet>();
-        moveSet.Add(new WalkMoveSet());
+        moveSet.Add(new WalkMoveSet()); 
+        moveSet.Add(moveSet[0]); 
         moveSet.Add(moveSet[0]);
-        moveSet.Add(moveSet[0]);
-        moveSet.Add(new ClimbMoveset());
+        moveSet.Add(new ClimbMoveset(hitableMasks, capsWidth));
         rb.mass = 50.0f;
-        capsWidth = collide.radius;
+  
         canMove = true;
         HeroStat.resurect();
         //animations
@@ -74,7 +74,7 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame - better use for graphical effects
     void Update()
     {
-
+        HeroTerrainColidingHandler();
         moveSetState = HeroStat.getState() - 1;
         
         if(HeroStat.Update(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y > 0.1f))
@@ -104,8 +104,6 @@ public class HeroController : MonoBehaviour
     //Fixed update is called once in constant amount of time - better use for phisic related things
     private void FixedUpdate()
     {
-        HeroTerrainColidingHandler();
-        //update heroStats
         movementController();
         //Debug.Log(lookDirection);
 
@@ -117,17 +115,20 @@ public class HeroController : MonoBehaviour
     {
         if ((int)HeroStat.getState() > 0)
         {
-            canMove = true;
-            if (inputMoveVector.sqrMagnitude > 0)
+            if(moveSetState!= (int)HeroStatManager.playerMoveStateTAB.Climb-1)
             {
-                lastInputVector = this.transform.rotation * Vector3.Scale(inputMoveVector, movingPlane);
-                
-            }         
+                canMove = true;
+                if (inputMoveVector.sqrMagnitude > 0)
+                {
+                    lastInputVector = this.transform.rotation * Vector3.Scale(inputMoveVector, movingPlane);
+
+                }         
+                Quaternion tmp = Quaternion.FromToRotation(lastInputVector, new Vector3(1.0f, 0.0f, 0.0f)) * Quaternion.Euler(0, 90, 0);
+                BodyTransform.rotation = Quaternion.RotateTowards(BodyTransform.rotation, tmp,10.0f);
+                lookDirection = BodyTransform.rotation*(new Vector3(0.0f, 0.0f, 1.0f));
+                lookDirection.Normalize();
+            }
             moveSet[moveSetState].movementController(groundMultiplayer, inputMoveVector, this.transform.rotation);
-            Quaternion tmp = Quaternion.FromToRotation(lastInputVector, new Vector3(1.0f, 0.0f, 0.0f)) * Quaternion.Euler(0, 90, 0);
-            BodyTransform.rotation = Quaternion.RotateTowards(BodyTransform.rotation, tmp,10.0f);
-            lookDirection =  BodyTransform.rotation*(new Vector3(0.0f, 0.0f, 1.0f));
-            lookDirection.Normalize();
         }
         else if(canMove) {
             canMove = false;
@@ -141,7 +142,7 @@ public class HeroController : MonoBehaviour
     private void HeroTerrainColidingHandler()
     {
         //if collider colides with ground
-        if (Physics.Raycast(rb.position, Vector3.down, out hit, collide.height / 2, hitableMasks) && hit.normal.y > 0.60f)
+        if (Physics.Raycast(rb.position+collide.center, Vector3.down, out hit, collide.height * 0.55f, hitableMasks) && hit.normal.y > 0.60f)
         {
 
             groundMultiplayer = hit.normal.y;
@@ -154,11 +155,9 @@ public class HeroController : MonoBehaviour
         }
         //if is climbing
         //needs changes
-        if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb - 1)
+        if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb)
         {
-            if (!(Physics.Raycast(rb.position, lookDirection, out hit, capsWidth + 0.05f, hitableMasks) ||
-             Physics.Raycast(rb.position + new Vector3(0.0f, 1.0f, 0.0f), lookDirection, out hit, capsWidth + 0.05f, hitableMasks) ||
-            Physics.Raycast(rb.position + new Vector3(0.0f, -0.7f, 0.0f), lookDirection, out hit, capsWidth + 0.05f, hitableMasks)))
+            if (!((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks))
             {
                 HeroStat.isClimbing = false;
             }
@@ -220,13 +219,14 @@ public class HeroController : MonoBehaviour
             if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb - 1)
             {
                 HeroStat.isClimbing = false;
+                HeroStat.changeState(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y > 0.1f);
             }
-            else if ((Physics.Raycast(rb.position, lookDirection, out hit, capsWidth + 0.05f, hitableMasks) ||
-                Physics.Raycast(rb.position + new Vector3(0.0f, 1.0f, 0.0f), lookDirection, out hit, capsWidth + 0.05f, hitableMasks) ||
-                Physics.Raycast(rb.position + new Vector3(0.0f, -0.7f, 0.0f), lookDirection, out hit, capsWidth + 0.05f, hitableMasks)))
+            else if(((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks))
             {
                 HeroStat.isClimbing = true;
+                HeroStat.changeState(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y > 0.1f);
             }
+            Debug.Log(((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks));
         }
 
     }
@@ -239,7 +239,9 @@ public class HeroController : MonoBehaviour
     {
         return hit;
     }
-
+    public void upgradeStats(ref Stats Upgrade){
+        HeroStat.upgradeStats(ref Upgrade);
+    }
 
     private void aChangeJumpFlag()
     {
