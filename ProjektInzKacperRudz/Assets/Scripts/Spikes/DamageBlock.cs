@@ -38,7 +38,6 @@ public class DamageBlock : MonoBehaviour
                 
             }
             if(animContrl){
-            Debug.Log("AA BOLI");
             animContrl.iWasTouched();
             }
         }

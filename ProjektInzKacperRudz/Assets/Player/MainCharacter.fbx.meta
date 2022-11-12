@@ -77,7 +77,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: MainCharacter
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -119,8 +119,150 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Character Controller
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Spine_2
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2/Tail3
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2/Tail3/Tail4
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe1_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe2_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe4_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe5_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe1_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe2_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe4_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe5_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L/Finger12_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L/Finger12_L/Finger13_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L/Finger22_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L/Finger22_L/Finger23_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L/Finger32_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L/Finger32_L/Finger33_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L/Finger42_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L/Finger42_L/Finger43_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Thumb1_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Thumb1_L/Thumb2_L
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R/Finger12_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R/Finger12_R/Finger13_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R/Finger22_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R/Finger22_R/Finger23_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R/Finger32_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R/Finger32_R/Finger33_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R/Finger42_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R/Finger42_R/Finger43_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Thumb1_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Thumb1_R/Thumb2_R
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head/Head.001
+        weight: 1
+      - path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head/Head.002
+        weight: 1
+      - path: MainCharacter
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -176,7 +318,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.49061707
+        functionName: ClimbOnAnimationJump
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -205,7 +354,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: ClimbOnEdgeUp
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.58602154
+        functionName: ClimbOnEdgeForward
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -234,7 +397,35 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: ClimbOnAnimationMoveUpwardsStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.0994665
+        functionName: ClimbOnAnimationMoveUpwardsStop
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5005105
+        functionName: ClimbOnAnimationMoveUpwardsStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.62923956
+        functionName: ClimbOnAnimationMoveUpwardsStop
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -766,7 +957,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

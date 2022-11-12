@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BodyMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Character Controller
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Spine_2
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart
+    m_Weight: 0
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1
+    m_Weight: 0
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2
+    m_Weight: 0
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2/Tail3
+    m_Weight: 0
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/TailStart/Tail1/Tail2/Tail3/Tail4
+    m_Weight: 0
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe1_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe2_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe4_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_L/Calf_L/Foot_L/Foot1_L/Toe5_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe1_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe2_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe4_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/Hips/Tigh_R/Calf_R/Foot_R/Foot1_R/Toe5_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L/Finger12_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger11_L/Finger12_L/Finger13_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L/Finger22_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger21_L/Finger22_L/Finger23_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L/Finger32_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger31_L/Finger32_L/Finger33_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L/Finger42_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Finger41_L/Finger42_L/Finger43_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Thumb1_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_L/Arm_L/Forearm_l/Hand_L/Thumb1_L/Thumb2_L
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R/Finger12_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger11_R/Finger12_R/Finger13_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R/Finger22_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger21_R/Finger22_R/Finger23_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R/Finger32_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger31_R/Finger32_R/Finger33_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R/Finger42_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Finger41_R/Finger42_R/Finger43_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Thumb1_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Calvicle_R/Arm_R/Forearm_r/Hand_R/Thumb1_R/Thumb2_R
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head/Head.001
+    m_Weight: 1
+  - m_Path: Armature/Character Controller/OnHipsBOdyController/SpineController/Torso/Neck/Head/Head.002
+    m_Weight: 1
+  - m_Path: MainCharacter
+    m_Weight: 1
+  - m_Path: Sphere
+    m_Weight: 1

@@ -38,10 +38,6 @@ public class HeroCollision : MonoBehaviour
         
         rb.AddForce(knockback, ForceMode.VelocityChange);
     }
-    //apply efect like knockback in time
-    public void applyEffect(){
-
-    }
     public bool canBeHitten()
     {
         return invincibilityTimer<0.05f && HeroStat.getState()>0;

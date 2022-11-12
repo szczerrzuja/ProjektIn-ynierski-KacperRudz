@@ -25,6 +25,7 @@ public class HeroController : MonoBehaviour
     private bool canMove;
     private float groundMultiplayer = 0.0f;
     private Transform BodyTransform;
+    [SerializeField] HeroAnimationScript PAS;
     //public
     private Vector3
     /*  
@@ -36,7 +37,6 @@ public class HeroController : MonoBehaviour
     //vector of combined inputs (ad, jump, ws)
     inputMoveVector = new Vector3(0, 0, 0);
 
-    float capsWidth;
     private int moveSetState;
 
     // Start is called before the first frame update
@@ -48,20 +48,20 @@ public class HeroController : MonoBehaviour
         input = GetComponent<PlayerInput>();
         HeroStat = new HeroStatManager();
         BodyTransform = this.transform.Find("Body").transform;
-        capsWidth = collide.radius;
         rb.velocity = Vector3.zero;
         moveSet = new List<WalkMoveSet>();
         moveSet.Add(new WalkMoveSet()); 
         moveSet.Add(moveSet[0]); 
         moveSet.Add(moveSet[0]);
-        moveSet.Add(new ClimbMoveset(hitableMasks, capsWidth));
+        moveSet.Add(new ClimbMoveset(hitableMasks, collide.radius, collide.height));
+        
         rb.mass = 50.0f;
   
         canMove = true;
         HeroStat.resurect();
         //animations
         animator = this.transform.Find("Body").GetComponent<Animator>();
-
+        ((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).setAnimator(ref animator);
         //gui
         playerStatus = GameObject.Find("Gui").GetComponent<PlayerStatus>();
         playerStatus.Initiate(HeroStat.getMaxHP(), HeroStat.getMaxSP());
@@ -81,17 +81,9 @@ public class HeroController : MonoBehaviour
         {
             animator.SetTrigger("Dead");
         }
-        updateAnimationParameters();
         playerStatus.SetCurrentLevels(HeroStat.Health_Points, HeroStat.Stamina_Points);
 
     }   
-    private void updateAnimationParameters(){
-        aChangeXZSpeed();
-        aChangeYSpeed();
-        aChangeState();
-        aChangeMVSpeed();
-    }
-
     public void respawn(ref GameObject RespawnPoint){
         this.transform.position = RespawnPoint.transform.position;
         HeroStat.resurect();
@@ -123,7 +115,7 @@ public class HeroController : MonoBehaviour
                     lastInputVector = this.transform.rotation * Vector3.Scale(inputMoveVector, movingPlane);
 
                 }         
-                Quaternion tmp = Quaternion.FromToRotation(lastInputVector, new Vector3(1.0f, 0.0f, 0.0f)) * Quaternion.Euler(0, 90, 0);
+                Quaternion tmp = Quaternion.FromToRotation(lastInputVector, new Vector3(0.0f, 0.0f, -1.0f));
                 BodyTransform.rotation = Quaternion.RotateTowards(BodyTransform.rotation, tmp,10.0f);
                 lookDirection = BodyTransform.rotation*(new Vector3(0.0f, 0.0f, 1.0f));
                 lookDirection.Normalize();
@@ -155,11 +147,12 @@ public class HeroController : MonoBehaviour
         }
         //if is climbing
         //needs changes
-        if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb)
+        if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb-1)
         {
             if (!((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks))
             {
                 HeroStat.isClimbing = false;
+                ((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).ExitState();
             }
         }
 
@@ -174,13 +167,9 @@ public class HeroController : MonoBehaviour
             if (context.started)
             {
                 if (moveSet[moveSetState].onJump(context))
-                    aChangeJumpFlag();
-
+                    PAS.aChangeJumpFlag();
             }
-
         }
-
-
     }
 
 
@@ -218,15 +207,16 @@ public class HeroController : MonoBehaviour
         {
             if (moveSetState == (int)HeroStatManager.playerMoveStateTAB.Climb - 1)
             {
+                ((ClimbMoveset)moveSet[moveSetState]).ExitState();
                 HeroStat.isClimbing = false;
                 HeroStat.changeState(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y > 0.1f);
             }
             else if(((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks))
             {
+                HeroStat.jumpsCounter = HeroStat.getMaxJumps();
                 HeroStat.isClimbing = true;
                 HeroStat.changeState(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y > 0.1f);
             }
-            Debug.Log(((ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1]).canClimb(lookDirection, hitableMasks));
         }
 
     }
@@ -242,28 +232,20 @@ public class HeroController : MonoBehaviour
     public void upgradeStats(ref Stats Upgrade){
         HeroStat.upgradeStats(ref Upgrade);
     }
-
-    private void aChangeJumpFlag()
-    {
-        animator.SetTrigger("Jump");
+    public ClimbMoveset GetClimbMoveset(){
+        return (ClimbMoveset)moveSet[(int)HeroStatManager.playerMoveStateTAB.Climb-1];
     }
-    private void aChangeXZSpeed()
+    public ref HeroStatManager GetHeroStatManager()
     {
-        animator.SetFloat("XZSpeed", rb.velocity.x + rb.velocity.z);
+        return ref HeroStat;
     }
-    private void aChangeYSpeed()
+    public  Vector3 getVelocityVector()
     {
-        animator.SetFloat("YSpeed", rb.velocity.y);
+        return rb.velocity;
     }
-    private void aChangeState()
+        public Vector3 getLookDirection()
     {
-        animator.SetInteger("PrevState", animator.GetInteger("State"));
-        animator.SetInteger("State", HeroStat.getState());
-    }
-    private void aChangeMVSpeed()
-    {
-
-        animator.SetFloat("MVSpeed", (rb.velocity.x * rb.velocity.x + rb.velocity.z * rb.velocity.z) / 36);
+        return lookDirection;
     }
 
 }
