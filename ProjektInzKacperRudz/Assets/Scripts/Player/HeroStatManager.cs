@@ -44,7 +44,7 @@ public class HeroStatManager
         mvSpeeds.Add(4.0f);
         acceleration = 16.0f;
         jumpsCounter = (int)Base_stats.stats_values[(int)Stats.StatisticsCODE.maxJump]+(int)UPD_Stats.stats_values[(int)Stats.StatisticsCODE.maxJump];
-        jumpStrength = mvSpeeds[1]*3;
+        jumpStrength = mvSpeeds[1]*1.5f;
         staminaDCD = staminaDepleationCD;
         invincibilityTime = 0.3f;
 

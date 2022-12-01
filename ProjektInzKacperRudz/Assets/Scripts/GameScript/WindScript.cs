@@ -32,7 +32,6 @@ public class WindScript : MonoBehaviour
             framesToNextChange  = Random.Range(MinTimeBetweenChanges, MaxtimeBetweenChanges);
             currentWind = Random.Range(windMin, windMax);
             foreach(SpikesAnimator sp in spikes){
-                Debug.Log(sp);
                 sp.setWind(currentWind);
             }
         }

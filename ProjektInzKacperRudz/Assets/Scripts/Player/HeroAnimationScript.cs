@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,7 +48,7 @@ public class HeroAnimationScript : MonoBehaviour
     private void aChangeMVSpeed()
     {
         Vector3 tmp = HC.getVelocityVector();
-        animator.SetFloat("MVSpeed", (tmp.x * tmp.x + tmp.z * tmp.z) / 36);
+        animator.SetFloat("MVSpeed", Mathf.Sqrt(tmp.x * tmp.x + tmp.z * tmp.z));
         animator.SetFloat("YVelocity", tmp.y);
         tmp.Normalize();
         Vector2 tmp2 = new Vector2((HC.getLookDirection().normalized.x - tmp.x)*System.Convert.ToSingle(tmp.x>0.01f && tmp.x<-0.01f),

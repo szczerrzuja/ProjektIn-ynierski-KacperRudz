@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Spikes\SpikesAnimator.cs" />
      <Compile Include="Assets\Scripts\Player\WalkMoveSet.cs" />
      <Compile Include="Assets\Scripts\GameScript\WindScript.cs" />
+     <Compile Include="Assets\Scripts\Platofrms\PlatformTrigger.cs" />
      <Compile Include="Assets\Scripts\Platofrms\PathPlatformD.cs" />
      <Compile Include="Assets\Scripts\Player\HeroStatManager.cs" />
      <Compile Include="Assets\Scripts\Platofrms\PathPlatformCR.cs" />

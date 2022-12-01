@@ -700,6 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d45531ce66953f4a8f33af5fbd49af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPSlide: {fileID: 6420766730207376640}
+  SPSlide: {fileID: 6420766730291839663}
 --- !u!1 &6420766731634132268
 GameObject:
   m_ObjectHideFlags: 0

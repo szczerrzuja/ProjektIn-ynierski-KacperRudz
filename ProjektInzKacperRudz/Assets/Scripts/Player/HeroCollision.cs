@@ -25,6 +25,7 @@ public class HeroCollision : MonoBehaviour
 
     public void setHeroStat(ref HeroStatManager HSM)
     {
+        print("I am here");
         HeroStat = HSM;
     }
     //apply damage 

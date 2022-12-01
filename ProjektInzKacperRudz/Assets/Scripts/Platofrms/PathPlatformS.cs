@@ -6,34 +6,13 @@ using UnityEngine;
 public class PathPlatformS : MonoBehaviour
 {
     protected short state = 1;
-    public Rigidbody rb;
-    public List<Vector3> direction;
-    public List<float> mvSpeeds;
-    [SerializeField]
-    public float acceleration;
+    [SerializeField] public List<Transform> waypoints;
+    [SerializeField] public float mvSpeed;
+    [SerializeField] public bool workOnTrigger;
+    private bool triggered;
     // Start is called before the first frame update
-    public PathPlatformS(Vector3[] destinations, float[] movespeed, float acce)
-    {
-        rb = GetComponent<Rigidbody>();
-        direction = new List<Vector3>();
-        mvSpeeds = new List<float>();
-        acceleration = acce;
-        direction.Add(rb.position);
-        if (destinations.GetLength(1) > 0)
-        {
-            for (int i = 0; i < destinations.GetLength(1); i++)
-            {
-                direction.Add(destinations[i]);
-            }
-        }
-        if (movespeed.GetLength(1) > 0)
-        {
-            mvSpeeds.Add(movespeed[0]);
-            for (int i = 0; i < movespeed.GetLength(1); i++)
-            {
-                mvSpeeds.Add(movespeed[i]);
-            }
-        }
+    private void Start() {
+        triggered = false;
     }
     // Start is called before the first frame update
     public virtual void Update()
@@ -45,23 +24,16 @@ public class PathPlatformS : MonoBehaviour
     {
         if (state != -1)
         {
-            Vector3 relPosition = direction[state] - rb.position;
-            if (relPosition.sqrMagnitude <= 0.002f)
+            if(triggered||workOnTrigger)
             {
-                rb.position = direction[state];
-                rb.velocity = Vector3.zero;
-                stateManager();
-            }
-            else
-            {
-                if (rb.velocity.sqrMagnitude <= mvSpeeds[state] * mvSpeeds[state])
-                    rb.AddForce(relPosition.normalized * acceleration * Time.deltaTime, ForceMode.Acceleration);
-                else
+                Vector3 relPosition = waypoints[state].position - transform.position;
+                if (relPosition.sqrMagnitude <= 0.002f)
                 {
-                    Vector3 tmp = Vector3.ClampMagnitude(rb.velocity, mvSpeeds[state]);
-                    rb.velocity = tmp;
+                    stateManager();
                 }
-
+    
+                
+                transform.position = Vector3.MoveTowards(transform.position, waypoints[state].position, mvSpeed*Time.fixedDeltaTime);
             }
         }
         else
@@ -70,15 +42,17 @@ public class PathPlatformS : MonoBehaviour
     public virtual void stateManager()
     {
         state += 1;
-        if (state >= direction.Count)
+        if (state >= waypoints.Count)
         {
             state = -1;
         }
     }
     public virtual void onStop()
     {
-        Debug.Log("Here i am");
-        rb.isKinematic = true;
         this.enabled = false;
+    }
+    public void setTrigger(bool trig)
+    {
+        triggered = trig;
     }
 }

@@ -11,7 +11,7 @@ public class HeroController : MonoBehaviour
 {
 
     //private
-    [SerializeField] private RespawnController RC;
+    private RespawnController RC;
     private Rigidbody rb;
     private CapsuleCollider collide;
     [SerializeField] private LayerMask hitableMasks;
@@ -65,7 +65,6 @@ public class HeroController : MonoBehaviour
         //gui
         playerStatus = GameObject.Find("Gui").GetComponent<PlayerStatus>();
         playerStatus.Initiate(HeroStat.getMaxHP(), HeroStat.getMaxSP());
-
         GetComponent<HeroCollision>().setHeroStat(ref HeroStat);
 
         
@@ -246,6 +245,9 @@ public class HeroController : MonoBehaviour
         public Vector3 getLookDirection()
     {
         return lookDirection;
+    }
+    public void setRespawnController(ref RespawnController rc){
+        RC = rc;
     }
 
 }

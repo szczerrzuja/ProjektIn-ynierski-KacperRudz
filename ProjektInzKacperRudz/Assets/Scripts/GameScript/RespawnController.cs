@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class RespawnController : MonoBehaviour
 {
-    private GameObject respawnPoint;
-    [SerializeField]private int repsawnPointID;
+    [SerializeField] public GameObject respawnPoint;
+    [SerializeField] private int repsawnPointID;
     private HeroController Player;
+    [SerializeField]public GameObject PlayerOBJ;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player1").GetComponent<HeroController>();
+        RespawnController tmp = this;
+
+        Player = PlayerOBJ.GetComponent<HeroController>();
+        Player.setRespawnController(ref tmp);
+        PlayerOBJ.transform.position = respawnPoint.transform.position;
+
     }
 
     // Update is called once per frame
